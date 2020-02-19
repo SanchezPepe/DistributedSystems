@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 public class ComputeClient {
 
     public static void main(String[] args) {
-        System.setProperty("java.security.policy", "C:/Users/sdist.ITAM/Documents/NetBeansProjects/JavaRMI/src/client/client.policy");
+        System.setProperty("java.security.policy", "3_RemoteInvocation/JavaRMI/src/client/client.policy");
 
         if (System.getSecurityManager() == null) {
             System.setSecurityManager(new SecurityManager());

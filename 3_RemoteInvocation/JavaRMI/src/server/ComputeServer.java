@@ -7,7 +7,6 @@ import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Logger;
 
-
 /**
  * ComputeServer
  */
@@ -29,12 +28,13 @@ public class ComputeServer implements Compute {
 
     public static void main(String[] args) {
         try {
-            System.setProperty("java.security.policy", "C:/Users/sdist.ITAM/Documents/NetBeansProjects/JavaRMI/src/server/server.policy");
+            System.setProperty("java.security.policy", "3_RemoteInvocation/JavaRMI/src/server/server.policy");
 
             if (System.getSecurityManager() == null) {
                 System.setSecurityManager(new SecurityManager());
             }
             LocateRegistry.createRegistry(1099);
+            System.out.println("Server Listening...");
 
             String name = "Compute";
             ComputeServer engine = new ComputeServer();

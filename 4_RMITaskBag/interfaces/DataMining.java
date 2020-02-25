@@ -8,6 +8,6 @@ import java.rmi.RemoteException;
  */
 public interface DataMining extends Remote{
 
-    public Task executeDataTask(Task aTask) throws RemoteException;
+    public void executeDataTask(Task aTask) throws RemoteException;
 
 }

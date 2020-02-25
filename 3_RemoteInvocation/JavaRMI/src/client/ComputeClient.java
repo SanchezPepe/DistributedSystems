@@ -20,8 +20,8 @@ public class ComputeClient {
         }
 
         try {
-            String name = "Compute";
             Registry registry = LocateRegistry.getRegistry("localhost"); // server's ip address
+            String name = "Compute";
             Compute comp = (Compute) registry.lookup(name);
 
             System.out.println("3^2 = " + comp.square(3));

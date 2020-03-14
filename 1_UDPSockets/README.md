@@ -19,6 +19,7 @@ DatagramPacket(byte[] buf, int length, InetAddress address, int port);
  DatagramPacket(byte[] buf, int offset, int length, InetAddress address, int port).
 ```
 
+### Métodos
 La clase DatagramPacket también proporciona métodos para el manejo de los datagramas
 - getData() : para obtener el mensaje contenido en el datagrama.
 - getAddress() : para obtener la dirección IP.
@@ -31,8 +32,9 @@ Manejador de sockets para el envío y recepción de datagramas UDP
 - DatagramSocket(int port): Para procesos que necesitan un número de puerto específico.
 - DatagramSocket(int port, InetAddress laddr): Para escoger el número de puerto y una determinada dirección local.
 
-La clase DatagramSocket proporciona varios métodos, los más utilizados son:
 
+### Métodos
+Los más utilizados son:
 - send(DatagramPacket p): Recibe un DatagramPacket con el mensaje y el destino (excepciones con IOException)
 - receive(DatagramPacket p): Recibe un DatagramPacket vacío para colocar el mensaje, la longitud y origen (excepciones con IOException).
 - setSoTimeout(int timeout): Permite fijar un tiempo de espera, el método recieve se bloquea y una vez agotado el tiempo lanza un InterruptedIOException
@@ -43,12 +45,13 @@ Java proporciona una interfaz de datagramas para multicast. La clase MulticastSo
 
 Consiste en enviar un mensaje a cada uno de los miembros de un grupo de procesos. La pertenencia al grupo es transparente, esto es, que el emisor no conoce el número de miembros del grupo ni sus direcciones IP.
 
+### Constructores
 Un grupo multicast se compone de una dirección IP y un puerto.
-
 La clase MulticastSocket proporciona dos constructores alternativos:
 - MulticastSocket(): crea el socket en cualquiera de los puertos locales libres.
 - MulticastSocket(int port): que crea el socket en el puerto local definido.
 
+### Métodos
 Métodos más utilizados
 - joinGroup(InetAddress mcastaddr): unirse a un grupo multicast.
 - leaveGroup(InetAddress mcastaddr): abandonar grupo multicast.

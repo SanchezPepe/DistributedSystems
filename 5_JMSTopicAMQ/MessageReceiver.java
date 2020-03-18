@@ -45,7 +45,7 @@ public class MessageReceiver {
             while (!goodByeReceived) {
                 System.out.println("Waiting for messages...");
                 TextMessage textMessage = (TextMessage) messageConsumer.receive();
-                if (textMessage != null) {
+                if (textMessage ! = null) {
                     System.out.print("Received the following message: ");
                     System.out.println(textMessage.getText());
                     System.out.println();

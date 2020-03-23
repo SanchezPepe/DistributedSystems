@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author sdist
+ * @author Jose Sanchez
  */
 public class Papa implements Serializable{
     private int counter;

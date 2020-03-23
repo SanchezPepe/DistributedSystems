@@ -21,9 +21,10 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 
 /**
  *
- * @author sdist
+ * @author Jose Sanchez
  */
-public class Jugador implements Runnable{
+public class Jugador extends Thread{
+    
     private static String url = ActiveMQConnection.DEFAULT_BROKER_URL;
     String id, queue1, queue2;
 

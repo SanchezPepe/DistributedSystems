@@ -3,8 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hotpotatoe;
-
 import java.util.Random;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
@@ -60,7 +58,7 @@ public class Jugador extends Thread{
             Papa p = new Papa(rng.nextInt(10) + 2);
             msg.setObject(p);
             messageProducer.send(msg);
-            System.out.println(id + ". Empiezo con: " + p.getCounter());
+            System.out.println(id + " empieza con " + p.getCounter());
             boolean lost = false;
             int c;
             
@@ -70,11 +68,11 @@ public class Jugador extends Thread{
                     p =(Papa) msg2.getObject();
                     c = p.getCounter();
                     if(c == -1){
-                      System.out.println(id + ": Gane!!!!");
+                      System.out.println(id + " ganó");
                       lost = true;
                     }
                     else if(c == 1){
-                        System.out.println(id + ": Perdi!!!!");
+                        System.out.println(id + " perdió");
                         p.setCounter(-1);
                         msg.setObject(p);
                         messageProducer.send(msg);
@@ -85,7 +83,7 @@ public class Jugador extends Thread{
                         
                         lost = true;
                     }else{
-                        System.out.println(id + ". Recibi " + c);
+                        System.out.println(id + " recibió " + c);
                         p.setCounter(c - 1);
                         msg.setObject(p);
                         messageProducer.send(msg);
